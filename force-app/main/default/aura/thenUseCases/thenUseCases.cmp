@@ -1,0 +1,21 @@
+<aura:component controller="ThenUseCasesController">
+	<aura:attribute name="attr1" type="String"/>
+
+	<aura:registerEvent name="myCmpEvent" type="c:cmpEvent"/>
+	<aura:registerEvent name="myAppEvent" type="c:appEvent"/>
+
+	<!-- In the examples, the WHEN will be just calling aura methods, for simplicity -->
+	<aura:method name="setAttribute" action="{!c.onSetAttribute}"/>
+	<aura:method name="returnSomething" action="{!c.onReturnSomething}">
+		<aura:attribute name="param1" type="String" required="true"/>
+	</aura:method>
+	<aura:method name="modifyDOMElement" action="{!c.onModifyDOMElement}"/>
+	<aura:method name="fireCmpEvent" action="{!c.onFireCmpEvent}"/>
+	<aura:method name="fireAppEvent" action="{!c.onFireAppEvent}"/>
+	<aura:method name="invokeApex" action="{!c.onInvokeApex}"/>
+	<aura:method name="callChildMethod" action="{!c.onCallChildMethod}"/>
+
+	<a aura:id="my-link">Click me</a>
+
+	<c:thenUseCasesChild aura:id="child-cmp"/>
+</aura:component>

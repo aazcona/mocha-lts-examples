@@ -1,0 +1,5 @@
+<aura:component>
+	<aura:method name="methodCall" action="{!c.onMethodCall}">
+		<aura:attribute name="param1" type="String" required="true"/>
+	</aura:method>
+</aura:component>

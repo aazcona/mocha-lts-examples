@@ -1,0 +1,20 @@
+<aura:component>
+	<aura:attribute name="attr1" type="String"/>
+	<aura:attribute name="attr2" type="String"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
+	<aura:handler name="change" value="{!v.attr1}" action="{!c.onAttr1Change}"/>
+
+	<aura:handler name="myCmpEvent" event="c:cmpEvent" action="{!c.onCmpEvent}"/>
+	<aura:handler event="c:appEvent" action="{!c.onAppEvent}"/>
+
+	<aura:method name="methodCall" action="{!c.onMethodCall}">
+		<aura:attribute name="param1" type="String" required="true"/>
+	</aura:method>
+
+	<aura:method name="methodCallAsync" action="{!c.onMethodCallAsync}"/>
+
+	<c:whenUseCasesChild aura:id="child-cmp"/>
+
+	<a aura:id="my-link" onclick="{!c.onInteractWithDOM}">Click me</a>
+</aura:component>
